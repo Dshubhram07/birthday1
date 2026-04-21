@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Happy Birthday My Love 💖</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>🎂 Happy Birthday My Love 💖</h1>
+
+<p>You are the most beautiful part of my life ❤️</p>
+
+<!-- Dudu & Bubu Scene -->
+<div class="scene">
+    
+    <div class="dudu bear">
+        <div class="eye left"></div>
+        <div class="eye right"></div>
+        <div class="nose"></div>
+    </div>
+
+    <div class="bubu bear">
+        <div class="eye left"></div>
+        <div class="eye right"></div>
+        <div class="nose"></div>
+    </div>
+
+    <div class="kiss">💋</div>
+
+</div>
+
+<p>Dudu loves Bubu forever 💕</p>
+
+<!-- Navigation Buttons -->
+<a href="love.html"><button class="btn">💌 Love Letter</button></a>
+<a href="memories.html"><button class="btn">📸 Memories</button></a>
+<a href="surprise.html"><button class="btn">🎁 Surprise</button></a>
+
+<!-- Floating Hearts -->
+<script>
+setInterval(() => {
+    let heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "💖";
+    heart.style.left = Math.random() * 100 + "vw";
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 6000);
+}, 300);
+</script>
+
+</body>
+</html>

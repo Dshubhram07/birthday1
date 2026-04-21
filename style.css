@@ -1,0 +1,305 @@
+body {
+    margin: 0;
+    font-family: 'Comic Sans MS', cursive;
+    background: linear-gradient(135deg, #ffd6e0, #fff0f5);
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* Title */
+h1 {
+    color: #ff4d6d;
+}
+
+/* Buttons */
+.btn {
+    padding: 12px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 20px;
+    background: #ff4d6d;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #ff1e4d;
+}
+
+/* Floating hearts */
+.heart {
+    position: fixed;
+    bottom: -10px;
+    color: #ff4d6d;
+    font-size: 20px;
+    animation: floatUp 6s linear infinite;
+}
+
+/* Animation */
+@keyframes floatUp {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+}
+
+
+
+/* Scene */
+.scene {
+    position: relative;
+    height: 200px;
+    margin-top: 40px;
+}
+
+/* Bears */
+.bear {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+/* Dudu (brown) */
+.dudu {
+    background: #8b5a2b;
+    left: 20%;
+    animation: approach 4s infinite;
+}
+
+/* Bubu (white) */
+.bubu {
+    background: white;
+    border: 2px solid #ddd;
+    right: 30%;
+}
+
+/* Eyes */
+.eye {
+    width: 10px;
+    height: 10px;
+    background: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 30px;
+}
+
+.left { left: 25px; }
+.right { right: 25px; }
+
+/* Nose */
+.nose {
+    width: 14px;
+    height: 10px;
+    background: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 55px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Movement animation */
+@keyframes approach {
+    0%   { left: 20%; }
+    40%  { left: 38%; }  /* reach Bubu */
+    60%  { left: 38%; }  /* stay */
+    100% { left: 20%; }
+}
+
+/* Kiss animation */
+.kiss {
+    position: absolute;
+    top: 50px;
+    left: 42%;
+    font-size: 26px;
+    opacity: 0;
+    animation: kissPop 4s infinite;
+}
+
+@keyframes kissPop {
+    0%, 35% { opacity: 0; transform: scale(0.5); }
+    45%, 55% { opacity: 1; transform: scale(1.3); }
+    65%, 100% { opacity: 0; transform: scale(0.5); }
+}
+
+/* 💖 EXTRA UPGRADE: Blush hearts */
+.dudu::after, .bubu::after {
+    content: "❤️";
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    opacity: 0;
+    animation: blush 4s infinite;
+}
+
+@keyframes blush {
+    0%, 40% { opacity: 0; }
+    45%, 60% { opacity: 1; }
+    100% { opacity: 0; }
+}
+/* Slider container */
+.slider {
+    width: 80%;
+    margin: 30px auto;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+/* Slide track */
+.slides {
+    display: flex;
+    width: 1000%;
+    animation: slide 30s infinite;
+}
+
+/* Images */
+.slides img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+/* Animation */
+@keyframes slide {
+    0% { transform: translateX(0); }
+    10% { transform: translateX(-100%); }
+    20% { transform: translateX(-200%); }
+    30% { transform: translateX(-300%); }
+    40% { transform: translateX(-400%); }
+    50% { transform: translateX(-500%); }
+    60% { transform: translateX(-600%); }
+    70% { transform: translateX(-700%); }
+    80% { transform: translateX(-800%); }
+    90% { transform: translateX(-900%); }
+    100% { transform: translateX(0); }
+}
+/* Make everything fit inside screen */
+body {
+    overflow: hidden;
+}
+
+/* Grid layout (2 rows of 5 images) */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    width: 95%;
+    margin: 10px auto;
+}
+
+/* Small images */
+.photo-grid img {
+    width: 100%;
+    height: 100px;
+    object-fit: contain;   /* shows full image */
+    background: white;     /* fills empty space */
+    border-radius: 10px;
+
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Different delays (natural movement) */
+.photo-grid img:nth-child(1) { animation-delay: 0s; }
+.photo-grid img:nth-child(2) { animation-delay: 0.2s; }
+.photo-grid img:nth-child(3) { animation-delay: 0.4s; }
+.photo-grid img:nth-child(4) { animation-delay: 0.6s; }
+.photo-grid img:nth-child(5) { animation-delay: 0.8s; }
+.photo-grid img:nth-child(6) { animation-delay: 1s; }
+.photo-grid img:nth-child(7) { animation-delay: 1.2s; }
+.photo-grid img:nth-child(8) { animation-delay: 1.4s; }
+.photo-grid img:nth-child(9) { animation-delay: 1.6s; }
+.photo-grid img:nth-child(10) { animation-delay: 1.8s; }
+
+/* Smooth up-down movement */
+@keyframes float {
+    0%   { transform: translateY(0px); }
+    50%  { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+}
+/* Hide initially */
+.hidden {
+    display: none;
+    margin-top: 30px;
+}
+
+/* Ring animation */
+.ring {
+    font-size: 60px;
+    margin: 20px auto;
+    animation: ringPop 2s ease forwards, glow 2s infinite alternate;
+}
+
+/* Pop effect */
+@keyframes ringPop {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Glow effect */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #fff, 0 0 10px #ff4d6d;
+    }
+    100% {
+        text-shadow: 0 0 15px #fff, 0 0 25px #ff4d6d;
+    }
+}
+/* Ring style */
+.ring {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    font-size: 70px;
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Active animation */
+.ring.show {
+    animation: ringPop 1.5s ease forwards, glow 2s infinite alternate;
+}
+
+/* Pop effect */
+@keyframes ringPop {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+    60% {
+        transform: translate(-50%, -50%) scale(1.4);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Glow effect */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #fff, 0 0 10px #ff4d6d;
+    }
+    100% {
+        text-shadow: 0 0 20px #fff, 0 0 30px #ff4d6d;
+    }
+}
